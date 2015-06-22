@@ -1,6 +1,7 @@
 'use strict';
 
 var nconf = require('nconf');
+var path = require('path');
 
 /**
  * Handle the configuration management.
@@ -10,8 +11,8 @@ var nconf = require('nconf');
 function Config() {
   nconf.argv().env("_");
   var environment = nconf.get("NODE:ENV") || "development";
-  nconf.file(environment, "conf/" + environment + ".json");
-  nconf.file("default", "conf/default.json");
+  nconf.file(environment, {file: path.resolve(__dirname, '../conf/' + environment + '.json')});
+  nconf.file('default', {file: path.resolve(__dirname, '../conf/default.json')});
 }
 
 /**

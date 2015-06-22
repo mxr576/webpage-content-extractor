@@ -13,7 +13,7 @@ var config = require('../modules/config');
  * Get port from environment and store in Express.
  */
 
-var port = normalizePort(config.get("port") || process.env.PORT || '8000');
+var port = normalizePort(config.get("port") || process.env.PORT || '8001');
 app.set('port', port);
 console.log('[extractor] Extractor running in the ' + config.get("port") + ' port.');
 
