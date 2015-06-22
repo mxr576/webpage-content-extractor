@@ -41,12 +41,12 @@ router.get('/', function (req, res, next) {
   var url = req.query.url;
 
   if (url == undefined) {
-    res.json({'error': 'Please provide an ?url=... parameter. (Example: http://bbc.com)'});
+    res.json({'error': 'Please provide an ?url=... parameter. (Example: http://cnn.com)'});
     return;
   }
 
   if (!isValidUrl(url)) {
-    res.json({'error': url + ' is not a valid url parameter. (Example: http://bbc.com)'});
+    res.json({'error': url + ' is not a valid url parameter. (Example: http://cnn.com)'});
     return;
   }
 
