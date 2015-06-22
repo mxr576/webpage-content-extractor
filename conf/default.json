@@ -1,0 +1,8 @@
+{
+  "port": 8001,
+  "allowed-origins" : "*",
+  "extractor": "node-readability",
+  "readability": {
+    "token": ""
+  }
+}
