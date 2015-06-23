@@ -9,8 +9,8 @@ var ExtractorPrototype = require('./extractor-prototype');
  *
  * @constructor
  */
-function NodeReadabilityExtractor() {
-  NodeReadabilityExtractor.super_.call(this);
+function NodeReadabilityExtractor () {
+  ExtractorPrototype.call(this);
   this.name = 'Node\'s Readability Extractor';
   this.description = 'Uses a node-readability module as an extractor.';
 }
@@ -28,7 +28,7 @@ NodeReadabilityExtractor.prototype.fetch = function (link, cb) {
         self.fallback.fetch(link, cb);
         return;
       } else {
-        cb({'error': error, 'url': link}, null);
+        cb({error: 'fetch error', details: error, url: link, extractor: self.name}, null);
         return;
       }
     }

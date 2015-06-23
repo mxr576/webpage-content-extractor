@@ -13,7 +13,7 @@ var ExtractorPrototype = require('./extractor-prototype');
  * @constructor
  */
 function ReadabilityComExtractor(token) {
-  ReadabilityComExtractor.super_.call(this);
+  ExtractorPrototype.call(this);
   this.token = token;
   this.name = 'Readability.com Parser';
   this.description = 'Uses readability.com\'s parser as a backend, which is an external service so it is less processor intensive on your computer.\n';
@@ -40,11 +40,8 @@ ReadabilityComExtractor.prototype.fetch = function (link, cb) {
       self.fallback.fetch(link, cb);
       return;
     } else {
-      cb({
-        'error': response.statusCode,
-        'message': JSON.parse(body).message,
-        'url': url
-      }, null);
+      var details = body ? JSON.parse(body) : error;
+      cb({error: 'fetch error', details: details,  url: link, extractor: self.name}, null);
       return;
     }
   };

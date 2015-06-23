@@ -23,7 +23,7 @@ else {
  *
  * @returns boolean
  */
-var isValidUrl = function (url) {
+function isValidUrl(url) {
   var validatorOptions = {
     require_protocol: true,
     protocols: ['http', 'https']
@@ -34,19 +34,28 @@ var isValidUrl = function (url) {
 
 router.get('/', function (req, res, next) {
   if (extractorInstance === undefined) {
-    res.json({'error': '[extractor] Extractor not found: ' + config.get('extractor')});
+    res.json({
+      error: 'extractor not found',
+      details: 'Extractor not found: ' + config.get('extractor')
+    });
     return;
   }
 
   var url = req.query.url;
 
   if (url == undefined) {
-    res.json({'error': 'Please provide an ?url=... parameter. (Example: http://cnn.com)'});
+    res.json({
+      error: 'missing url parameter',
+      details: 'Please provide an ?url=... parameter. (Example: http://cnn.com)'
+    });
     return;
   }
 
   if (!isValidUrl(url)) {
-    res.json({'error': url + ' is not a valid url parameter. (Example: http://cnn.com)'});
+    res.json({
+      error: 'invalid url',
+      details: url + ' is not a valid url parameter. (Example: http://cnn.com)'
+    });
     return;
   }
 
@@ -56,6 +65,7 @@ router.get('/', function (req, res, next) {
       res.json(error);
       return;
     }
+
     res.json({'content': data});
     return;
   });

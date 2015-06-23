@@ -48,7 +48,7 @@ ExtractorPrototype.prototype.setFallback = function (fallback) {
  * @returns {*}
  */
 ExtractorPrototype.prototype.fetch = function (link, cb) {
-  return cb(null, {'message': 'Fetching content of ' + link});
+  return cb(null, {'content': 'Fetched content of ' + link});
 };
 
 module.exports = ExtractorPrototype;

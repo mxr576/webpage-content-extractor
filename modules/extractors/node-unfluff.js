@@ -11,7 +11,7 @@ var ExtractorPrototype = require('./extractor-prototype');
  * @constructor
  */
 function NodeUnfluffExtractor() {
-  NodeUnfluffExtractor.super_.call(this);
+  ExtractorPrototype.call(this);
   this.name = 'Node\'s Unfluff Extractor';
   this.description = 'Uses a node-unfluff module as a backend which extracts HTML free (plain) text content.';
 }
@@ -35,11 +35,8 @@ NodeUnfluffExtractor.prototype.fetch = function (link, cb) {
       self.fallback.fetch(link, cb);
       return;
     } else {
-      cb({
-        'error': response.statusCode,
-        'message': JSON.parse(body).message,
-        'url': link
-      }, null);
+      var details = body ? JSON.parse(body) : error;
+      cb({error: 'fetch error', details: details,  url: link, extractor: self.name}, null);
       return;
     }
   };
