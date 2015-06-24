@@ -41,7 +41,7 @@ router.get('/', function (req, res, next) {
     return;
   }
 
-  var url = req.query.url;
+  var url = encodeURI(req.query.url);
 
   if (url == undefined) {
     res.json({
