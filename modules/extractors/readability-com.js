@@ -40,7 +40,7 @@ ReadabilityComExtractor.prototype.fetch = function (link, cb) {
       self.fallback.fetch(link, cb);
       return;
     } else {
-      var details = body ? JSON.parse(body) : error;
+      var details = body ? JSON.parse(body) : error.toString();
       cb({error: 'fetch error', details: details,  url: link, extractor: self.name}, null);
       return;
     }
