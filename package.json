@@ -1,22 +1,48 @@
 {
-  "name": "link-content-extractor",
-  "version": "0.0.0",
-  "private": true,
-  "scripts": {
-    "start": "node ./bin/www"
-  },
+  "name": "wce",
+  "description": "Extract content of any web page by using various extraction libraries.",
+  "version": "1.0.0",
+  "keywords": [
+    "readability",
+    "grab",
+    "read",
+    "scrape",
+    "spider",
+    "article",
+    "readability",
+    "crawl",
+    "readable",
+    "web page",
+    "content",
+    "extract"
+  ],
+  "maintainers": [
+    {
+      "name": "Dezső BICZÓ",
+      "email": "mxr576@gmail.com",
+      "web": "biczodezso.hu"
+    }
+  ],
+  "repository": [
+    {
+      "type": "git",
+      "url": "https://github.com/mxr576/webpage-content-extractor.git",
+      "web": "https://github.com/mxr576/webpage-content-extractor"
+    }
+  ],
+  "license": "Apache-2.0",
+  "main": "index.js",
   "dependencies": {
-    "body-parser": "~1.12.4",
-    "debug": "~2.2.0",
-    "express": "~4.12.4",
-    "lodash": "^3.9.3",
-    "method-override": "^2.3.3",
-    "morgan": "~1.5.3",
-    "nconf": "^0.7.1",
-    "node-readability": "^1.0.1",
+    "events": "^1.0.2",
+    "fieldval": "^0.5.1",
+    "node-readability": "^1.0.2",
     "path": "^0.11.14",
+    "read-art": "^0.3.5",
+    "readability-api": "^0.4.0",
     "request": "^2.57.0",
+    "underscore": "^1.8.3",
     "unfluff": "^0.11.0",
-    "validator": "^3.40.1"
+    "util": "^0.10.3",
+    "winston": "^1.0.1"
   }
 }
