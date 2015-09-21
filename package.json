@@ -1,7 +1,7 @@
 {
   "name": "wce",
   "description": "Extract content of any web page by using various extraction libraries.",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "keywords": [
     "readability",
     "grab",
@@ -37,7 +37,7 @@
     "fieldval": "^0.5.1",
     "node-readability": "^1.0.2",
     "path": "^0.11.14",
-    "read-art": "^0.3.5",
+    "read-art": "^0.3.6",
     "readability-api": "^0.4.0",
     "request": "^2.57.0",
     "underscore": "^1.8.3",
