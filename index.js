@@ -52,7 +52,7 @@ WebPageContentExtractor.prototype.extract = function (url, extractor, emitter, e
       // Pass the the current extractor's error too.
       if (extractor.fallback) {
         error_log.push(error);
-        self.extract(url, extractor.fallback, emitter, error_log);
+        return self.extract(url, extractor.fallback, emitter, error_log);
       }
       else {
         error_log.push(error);
