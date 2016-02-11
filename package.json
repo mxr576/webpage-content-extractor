@@ -1,7 +1,7 @@
 {
   "name": "wce",
   "description": "Extract content of any web page by using various extraction libraries.",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "keywords": [
     "readability",
     "grab",
@@ -16,6 +16,9 @@
     "content",
     "extract"
   ],
+  "engines": {
+    "node": "0.12"
+  },
   "maintainers": [
     {
       "name": "Dezső BICZÓ",
@@ -37,7 +40,7 @@
     "fieldval": "^0.5.1",
     "node-readability": "^1.0.2",
     "path": "^0.11.14",
-    "read-art": "^0.3.6",
+    "read-art": "^0.4.0",
     "readability-api": "^0.4.0",
     "request": "^2.64.0",
     "underscore": "^1.8.3",
